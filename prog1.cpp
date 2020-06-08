@@ -15,8 +15,8 @@ int main (int argc, char *argv[]) {
     avlTree treeOne; 
 
     ifstream textFile; 
-    //textFile.open("/autograder/submission/PA3_dataset.txt"); 
-    textFile.open("PA3_dataset.txt");
+    textFile.open("/autograder/submission/PA3_dataset.txt"); 
+    //textFile.open("PA3_dataset.txt");
     string word; 
     char wordChar[100]; 
     int count; 
@@ -94,8 +94,8 @@ int main (int argc, char *argv[]) {
     // treeOne.insert("goodbye"); 
     // //treeOne.insert("hello"); 
     // //treeOne.rangeSearch("band", "cat", treeOne.root); 
-    // treeOne.printHeight(); 
-    // treeOne.print2D(treeOne.root); 
+    //treeOne.printHeight(); 
+    //treeOne.print2D(treeOne.root); 
     // treeOne.printPreOrder(treeOne.root); 
 
 

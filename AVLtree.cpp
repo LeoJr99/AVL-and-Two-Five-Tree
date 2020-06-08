@@ -5,7 +5,6 @@
 #include <algorithm>
 
 using namespace std;
-#define COUNT 10 
 
 avlTree::avlTree() : root(0) {}
 
@@ -48,11 +47,11 @@ avlTree::Node* avlTree::insertDSHelper(string word, Node *n) {
     }
 
     else if(word < n->wordVal) {
-        n->left = insertHelper(word, n->left); 
+        n->left = insertDSHelper(word, n->left); 
     }
 
     else if(word > n->wordVal) {
-        n->right = insertHelper(word, n->right); 
+        n->right = insertDSHelper(word, n->right); 
     }
 
     n->height = 1 + max(getHeight(n->left), getHeight(n->right)); 
@@ -166,7 +165,7 @@ avlTree::Node* avlTree::insertHelper(string word, Node *n) {
 avlTree::Node* avlTree::rotateRight(Node* n) {
 
     Node* x = n->left; 
-    Node* T2 = x->right; 
+    Node* subTree = x->right; 
 
     if (n == root) {
         root = x; 
@@ -174,7 +173,7 @@ avlTree::Node* avlTree::rotateRight(Node* n) {
 
     x->right = n; 
     n->parent = x; 
-    n->left = T2;
+    n->left = subTree;
 
     n->height = max(getHeight(n->left), getHeight(n->right)) + 1;
     x->height = max(getHeight(x->left), getHeight(x->right)) + 1; 
@@ -185,7 +184,7 @@ avlTree::Node* avlTree::rotateRight(Node* n) {
 avlTree::Node* avlTree::rotateLeft(Node *n) {
 
     Node* y = n->right; 
-    Node* T2 = y->left; 
+    Node* subTree = y->left; 
 
     if (n == root) {
         root = y; 
@@ -194,7 +193,7 @@ avlTree::Node* avlTree::rotateLeft(Node *n) {
     y->parent = n->parent; 
     y->left = n; 
     n->parent = y; 
-    n->right = T2; 
+    n->right = subTree; 
 
     n->height = max(getHeight(n->left), getHeight(n->right)) + 1;
     y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
@@ -287,33 +286,3 @@ int avlTree::depth(Node* n) {
     int maxH = max(maxLeft, maxRight) + 1;
     return maxH; 
 }
-
-void avlTree::print2DUtil(Node *root, int space)  
-{  
-    // Base case  
-    if (root == NULL)  
-        return;  
-  
-    // Increase distance between levels  
-    space += COUNT;  
-  
-    // Process right child first  
-    print2DUtil(root->right, space);  
-  
-    // Print current node after space  
-    // count  
-    cout<<endl;  
-    for (int i = COUNT; i < space; i++)  
-        cout<<" ";  
-    cout<<root->wordVal<<"\n";  
-  
-    // Process left child  
-    print2DUtil(root->left, space);  
-}  
-  
-// Wrapper over print2DUtil()  
-void avlTree::print2D(Node *root)  
-{  
-    // Pass initial space count as 0  
-    print2DUtil(root, 0);  
-}  

@@ -35,9 +35,6 @@ public:
     void printHeight(); 
     int depth(Node* n); 
 
-    void print2DUtil(Node *root, int space); 
-    void print2D(Node *root);
-
     Node *root; 
     
 private:
