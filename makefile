@@ -1,11 +1,11 @@
 # Makefile
 
-#CXX = g++
-CXX = clang++ 
+CXX = g++
+#CXX = clang++ 
 
 CXXFLAGS = -std=c++11 -Wall -g
 
-all: prog2.out
+all: prog1.out
 
-prog2.out: minMaxHeap.o prog2.cpp
+prog1: AVLtree.cpp prog1.cpp
 	${CXX} ${CXXFLAGS} $^ -o $@
