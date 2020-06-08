@@ -251,20 +251,27 @@ void avlTree::wordSearch(string word) {
     cout << word << " not found" << endl; 
 }
 
+// Use: object.printHeight() 
 void avlTree::printHeight() {
     int maxHeight; 
     maxHeight = depth(root); 
-    cout << maxHeight << endl; 
+    cout << "Height = " <<maxHeight << endl; 
 }
 
+// Use: Given avlTree object treeOne 
+// Method use goes as follows: treeOne.printPreOrder(treeOne.root) 
+// object.PrintPreOrder(object.root) 
 void avlTree::printPreOrder(Node *n) {
-    if (n == nullptr) {
-        return;
+
+    if (n != nullptr)
+        cout << "(" << n->wordVal << ":" << n->counter; 
+    else {
+        cout << "()"; 
+        return; 
     }
-  
-    cout << n->wordVal << " "; 
     printPreOrder(n->left);  
     printPreOrder(n->right); 
+    cout << ")"; 
 
 }
 

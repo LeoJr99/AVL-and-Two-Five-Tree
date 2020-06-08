@@ -43,8 +43,10 @@ public:
 
     bool fullNode(Node* n); 
 
+    // Use : object.getHeight(object.root) 
     void getHeight();
-    void preOrder();
+    // Use : object.printPreOrder(object.root) 
+    void printPreOrder(Node* n);
 
 private:
 

@@ -67,37 +67,14 @@ int main (int argc, char *argv[]) {
     for (int vecIt = 0; vecIt < commands.size(); vecIt++) {  
         if (commands[vecIt] == "range search") {
             treeOne.rangeSearch(commands[vecIt + 1], commands[vecIt + 2], treeOne.root); 
-            //wordList2.rangeSearch(wordList2.root, commands[vecIt + 1], commands[vecIt + 2] );
         }
         else if (commands[vecIt] == "insert") {
             treeOne.insert(commands[vecIt + 1]); 
-            //wordList2.insertWord(commands[vecIt + 1]); 
         }
         else if (commands[vecIt] == "search") {
             treeOne.wordSearch(commands[vecIt + 1]); 
-            //wordList2.searchWord(commands[vecIt + 1]); 
         }
     }
-
-    // treeOne.insert("hello"); 
-    // treeOne.insert("hello"); 
-    // treeOne.insert("yesterday"); 
-    // treeOne.insert("yesterday"); 
-    // treeOne.insert("yesterday"); 
-    // treeOne.insert("band"); 
-    // treeOne.insert("bankers"); 
-    // treeOne.insert("bat"); 
-    // treeOne.insert("cab"); 
-
-
-    // //treeOne.wordSearch("hello"); 
-    // treeOne.insert("goodbye"); 
-    // //treeOne.insert("hello"); 
-    // //treeOne.rangeSearch("band", "cat", treeOne.root); 
-    //treeOne.printHeight(); 
-    //treeOne.print2D(treeOne.root); 
-    // treeOne.printPreOrder(treeOne.root); 
-
 
 
 }

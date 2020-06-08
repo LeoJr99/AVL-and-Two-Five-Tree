@@ -9,6 +9,8 @@
 
 using namespace std; 
 
+// Comments on how to use printHeight() and printPreOrder() are on top of the method declarations and definitions. 
+
 class avlTree {
 public:
 
@@ -30,9 +32,14 @@ public:
     void wordSearch(string word); 
     void rangeSearch(string first, string last, Node* n); 
 
+    // Use: Given avlTree object treeOne 
+    // Method use goes as follows: treeOne.printPreOrder(treeOne.root) 
+    // object.PrintPreOrder(object.root) 
+    void printPreOrder(Node* n);
 
-    void printPreOrder(Node* n); 
+    // Use: object.printHeight() 
     void printHeight(); 
+
     int depth(Node* n); 
 
     Node *root; 
